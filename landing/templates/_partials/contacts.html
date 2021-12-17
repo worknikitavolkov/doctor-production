@@ -1,0 +1,48 @@
+{% load solo_tags %}
+{% get_solo 'landing.Contact' as contacts %}
+
+<section id="contacts" class="container contacts">
+  <div class="row">
+    <div class="col-lg-12 text-center py-5">
+      <h2 class="pb-3 border-bottom border-dark">Как с нами связаться</h2>
+    </div>
+    <div class="col-lg-4 col-md-12 mb-2">
+      <div class = "map">
+        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2230.497035556958!2d92.87478091550328!3d56.010064380622985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5cd7ae39c4f7d887%3A0x8007d89b03a6e68a!2sSurikova+St%2C+12%2C+Krasnoyarsk%2C+Krasnoyarskiy+kray%2C+660049!5e0!3m2!1sen!2sru!4v1538654465816"
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-12 mb-2">
+      <div class="card">
+        <div class="card-header text-center">
+          <h3>Контакты</h3>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <td>Адрес</td>
+                <td>{{contacts.address}}</td>
+              </tr>
+              <tr>
+                <td>Телефон</td>
+                <td>{{contacts.phone_number}}</td>
+              </tr>
+              <tr>
+                <td>Почта</td>
+                <td>{{contacts.email}}</td>
+              </tr>
+              <tr>
+                <td>Режим работы</td>
+                <td>{{contacts.schedule}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="text-center">
+            *Расписание доктора уточняйте у администратора по номеру телефона
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

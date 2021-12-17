@@ -1,0 +1,81 @@
+<div class="container d-flex justify-content-center flex-wrap">
+  {% for document in document_images %}
+    <div>
+
+      <img class="button-image" src="{{document.image.url}}" type="button" data-bs-toggle="modal" data-bs-target="#service{{document.name}}">
+
+      <div class="modal fade" id="service{{document.name}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Документ</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img class="modal-image" src="{{document.image.url}}">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  {% endfor %}
+</div>
+
+<footer class="footer py-2">
+  <div class="container d-flex justify-content-between">
+    <div class="buttons">
+      <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#documents">
+        Правовая информация
+      </button>
+      <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#services-documents">
+        Оказываемые услуги
+      </button>
+    </div>
+    <p class = "align-self-center text-center text-sm">
+      <small>Copyright &copy<span id="year"></span></small>
+    </p>
+  </div>
+</footer>
+
+
+<div class="modal fade" id="documents" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Правовая информация</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          {% for doc in legal_documents %}
+            <li>
+              <a href="{{doc.document.url}}">{{doc.name}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="services-documents" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Оказываемые услуги</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          {% for doc in service_images %}
+            <li>
+              <a target="_blank" href="{{doc.image.url}}">{{doc.name}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

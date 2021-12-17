@@ -1,0 +1,157 @@
+/* NAVBAR SECTION */ 
+body {
+  font-family: 'Exo 2', sans-serif;
+  background-color: #d9dce0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* * {
+  font-weight: 500 !important;
+} */
+
+/* html{ 
+  font-size: 18px;
+}
+ */
+
+
+.navbar {
+  border-bottom: 2px solid rgb(255, 255, 255);
+  background-color: rgb(20, 20, 20);
+}
+
+.navbar-brand .logo {
+  height: 40px;
+}
+
+.navbar-nav a {
+  color: white !important;
+}
+
+.navbar-nav a:hover {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* HEADER SECTION */
+.header {
+  background: url("/static/img/showcase.jpg") no-repeat center center/cover;
+  text-align: center;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.header-content {
+  padding: 200px 10px;
+  background-color: rgba(24, 24, 24, 0.85);
+}
+
+.header .special {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 20px;
+}
+
+.header .special .btn {
+  color: rgb(231, 231, 231);
+  padding: 5px;
+}
+
+.header .special .btn:hover {
+  color: #303030;
+}
+
+/* SERVICES SECTION */
+.card-img-top {
+  width: 250px;
+  height: 150px;
+}
+
+/* REVIEWS SECTION */
+.reviews .card{
+  max-width: 500px;
+  margin: 10px;
+}
+
+/* CONTACTS SECTION */
+.map {
+  height: 100%;
+}
+
+.contacts .map iframe{
+  width: 100%;
+  min-height: 320px;
+}
+
+.contacts .card {
+  width: 100%;
+  margin-right: 0!important;
+  min-height: 320px;
+}
+
+/* FOOTER */
+.footer {
+  color: white;
+  background-color: rgb(80, 80, 80);
+}
+
+.footer .buttons button {
+  margin: 5px;
+  width: 220px;
+}
+
+.button-image {
+  height: 150px; 
+  margin: 5px;
+}
+
+.modal-image {
+  width: 100%;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 992px) {
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+  }
+  .navbar-nav .nav-item {
+    padding: 0 30px;
+  }
+  .header-content {
+    padding: 150px 0px;
+  }
+  .button-image {
+    height: 110px;
+    margin: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-nav .nav-item {
+    padding: 0 10px;
+  }
+  .button-image {
+    height: 70px;
+    margin: 2px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-nav .nav-item {
+    padding: 0 5px;
+  }
+}
