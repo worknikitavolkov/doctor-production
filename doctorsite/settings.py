@@ -77,15 +77,24 @@ WSGI_APPLICATION = 'doctorsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'u1550666_default ',
-        'USER': 'u1550666_default',
-        'PASSWORD': 'U43G96eKHkkSaI5E',
-        'HOST': 'localhost',
+if DEBUG == True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'u1550666_default ',
+            'USER': 'u1550666_default',
+            'PASSWORD': 'U43G96eKHkkSaI5E',
+            'HOST': 'localhost',
+        }
+    }
+
 
 
 # Password validation
